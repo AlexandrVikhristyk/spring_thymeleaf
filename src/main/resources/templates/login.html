@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN</title>
+</head>
+<body>
+<div align="center">
+    <form action="j_spring_security_check" method="POST">
+        Login:<br/><input type="text" name="j_login"><br/>
+        Password:<br/><input type="password" name="j_password"><br/>
+        <input type="submit" />
+
+        <p><a href="/register">Register new user</a></p>
+
+        <p th:if="${param.error != null}">Wrong login or password!</p>
+
+        <p th:if="${param.logout != null}">Chao!</p>
+    </form>
+</div>
+</body>
+</html>
